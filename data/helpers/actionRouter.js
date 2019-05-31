@@ -44,8 +44,7 @@ router.delete('/:id', (req, res) => {
             dbaction.remove(deleteAction).then(
                 removeAction => {
                 res.status(201).json(removeAction)
-                }
-            )
+                })
         } else {
             res.status(404).json({ error: err, message: "The user id does not exist"})
         }
@@ -54,7 +53,5 @@ router.delete('/:id', (req, res) => {
         res.status(500).json({ message: "User could not be removed"})
     })
 })
-
-
 
 module.exports = router
